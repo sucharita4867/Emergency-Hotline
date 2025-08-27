@@ -9,7 +9,7 @@
       <script
             src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
       <!-- font-awesome CDN -->
-      <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
       <!-- google fonts -->
       <style>
             @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
@@ -54,7 +54,7 @@
                   </div>
             </nav>
       </head>
-      <main>
+      <main class="bg-[#DFEFFF]">
             <!-- banner section -->
             <section class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] ...">
                   <div class="border border-black text-center text-white md:py-4 md:px-14">
@@ -71,6 +71,39 @@
                                     Republic of Bangladesh</p>
                         </div>
                   </div>
+            </section>
+            <!-- card section -->
+            <section class="w-11/12 mx-auto py-10 grid grid-cols-12 gap-8 ">
+                  <section class="bg-yellow-200 col-span-9 flex">
+                        <div>
+                              <figure class="border border-black flex justify-between items-center">
+                                    <img class="border border-blue-900 bg-[#ED1C24] p-4 rounded-xl"
+                                          src="./assets/emergency.png" alt="">
+                                    <i class="fa-regular fa-heart"></i>
+                              </figure>
+                              <h1>National Emergency Number</h1>
+                              <p>National Emergency</p>
+                              <p>999</p>
+                              <button>All</button>
+                              <div>
+                                    <button>
+                                          <i class="fa-regular fa-copy"></i>
+                                          Copy</button>
+                                    <button>
+                                          <i class="fa-solid fa-phone"></i>
+                                          Call</button>
+                              </div>
+                        </div>
+
+                  </section>
+
+
+
+
+
+                  <aside class="bg-green-200 col-span-3">
+                        <h1>card</h1>
+                  </aside>
             </section>
       </main>
 </body>
