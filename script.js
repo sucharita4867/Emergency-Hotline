@@ -30,11 +30,29 @@ for (const cardBtn of cardCallButton) {
       let navCoin = parseInt(navCoinBtn.innerText);
       navCoinBtn.innerText = navCoin - 20;
       console.log(navCoinBtn);
-    } else if (navCoinBtn <= 0) {
-      console.log(navCoinBtn);
     }
+    // else if (navCoinBtn <= 20) {
+    //   return;
+    // }
   });
 }
+// copy btn works
+const cardCopy = document
+  .querySelectorAll(".copy-btn")
+  .addEventListener("click", function () {
+    const cardNumber = cardBtn.parentNode.parentNode.childNodes[7].innerText;
+    alert(`Copy Number ${cardNumber}`);
+
+    // const navCopy = getElement("nav-copy");
+    // let counts = 0;
+    // for (const cardIcon of cardCopy) {
+    //   cardIcon.addEventListener("click", function () {
+    //     counts++;
+    //     navCopy.innerText = counts;
+    //   });
+    // }
+  });
+
 // const sideItems = getElement("side-items");
 //   const data = {
 //     subtitle: `${cardSubTitle}`,
