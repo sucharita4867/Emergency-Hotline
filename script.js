@@ -57,8 +57,16 @@ document.getElementById("clear-btn").addEventListener("click", function () {
 });
 
 // copy btn works
-// const cardCopy = document
-//   .getElementsByClassName(".copy-btn")
-//   .addEventListener("click", function () {
-//     console.log("copy btn clicked");
-//   });
+
+const copyBtn = document.querySelectorAll(".copy-btn");
+const navCopy = getElement("nav-copy");
+let counts = 0;
+for (const item of copyBtn) {
+  item.addEventListener("click", function () {
+    const copyNum = item.parentNode.parentNode.childNodes[7].innerText;
+    navigator.clipboard.writeText(copyNum);
+    counts++;
+    navCopy.innerText = counts;
+    alert(`The number is copied: ${copyNum}`);
+  });
+}
