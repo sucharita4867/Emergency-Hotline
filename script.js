@@ -23,9 +23,7 @@ for (const cardBtn of cardCallButton) {
     const cardSubTitle = cardBtn.parentNode.parentNode.childNodes[5].innerText;
     const cardNumber = cardBtn.parentNode.parentNode.childNodes[7].innerText;
     let cardTitle = cardBtn.parentNode.parentNode.childNodes[3].innerText;
-    // console.log(cardTitle);
     alert(`Calling ${cardSubTitle} ${cardNumber}`);
-
     const navCoinBtn = getElement("nav-coin");
     const sideItems = getElement("side-items");
 
@@ -33,51 +31,34 @@ for (const cardBtn of cardCallButton) {
     let navCoin = parseInt(navCoinBtn.innerText);
     const date = new Date().toLocaleTimeString();
     if (navCoin <= 10) {
-      // console.log("clicked");
       alert("not enough coin");
       return;
     } else if (clickOk) {
       navCoinBtn.innerText = navCoin - 20;
-      sideItems.innerText = `${cardTitle} ${cardNumber} ${date}`;
-      // console.log(sideItems);
-      const data = {
-        subtitle: `${cardSubTitle}`,
-        number: `${cardNumber}`,
-        date: new Date().toLocaleTimeString(),
-      };
-
+      // sideItems.innerText = `${cardTitle} ${cardNumber} ${date}`;
       const sideContainer = getElement("side-container");
-      for (const sideItems of callHistory) {
-        console.log(sideItems);
-
-        // const div = document.createElement("div");
-        // div.innerHTML = `
-        // <div id="side-items"
-        //                             class="bg-gray-200 p-4 rounded-lg my-4 flex justify-between items-center">
-        //                             <div>
-        //                                   <h1>${sideItems.cardTitle}</h1>
-        //                                   <p>${sideItems.cardNumber}</p>
-        //                             </div>
-        //                             <p>${sideItems.date}</p>
-        //                       </div>
-        // `;
-        // sideContainer.appendChild(div);
-      }
+      const newCart = document.createElement("div");
+      newCart.innerHTML = `
+      <div id="side-items"class="bg-gray-100 p-2 rounded-lg my-4  md:flex  md:justify-between items-center">
+                                  <div>
+                                        <h1 class="md:font-semibold md:text-lg text-sm">${cardTitle}</h1>
+                                        <p class="text-[#5c5c5c]">${cardNumber}</p>
+                                  </div>
+                                  <p>${date}</p>
+                            </div>
+      `;
+      sideContainer.appendChild(newCart);
     }
   });
 }
+document.getElementById("clear-btn").addEventListener("click", function () {
+  const sideContainer = getElement("side-container");
+  sideContainer.innerHTML = "";
+});
+
 // copy btn works
 // const cardCopy = document
 //   .getElementsByClassName(".copy-btn")
 //   .addEventListener("click", function () {
 //     console.log("copy btn clicked");
 //   });
-
-// const sideItems = getElement("side-items");
-//   const data = {
-//     subtitle: `${cardSubTitle}`,
-//     number: `${cardNumber}`,
-//     date: new Date().toLocaleTimeString(),
-//   };
-//   sideItems.push(data);
-//   //   console.log(callHistory);
